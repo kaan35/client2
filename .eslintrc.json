@@ -1,51 +1,57 @@
 {
-  "root": true,
+  "root"          : true,
   "ignorePatterns": [
     "projects/**/*"
   ],
-  "overrides": [
+  "overrides"     : [
     {
-      "files": [
+      "files"        : [
         "*.ts"
       ],
       "parserOptions": {
-        "project": [
+        "project"             : [
           "tsconfig.json"
         ],
         "createDefaultProgram": true
       },
-      "extends": [
-        "standard",
+      "extends"      : [
+        "airbnb-base",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
-      "rules": {
-        "@angular-eslint/directive-selector": [
+      "rules"        : {
+        "class-methods-use-this"                   : 0,
+        "import/prefer-default-export"             : 0,
+        "import/no-unresolved"                     : 0,
+        "no-useless-constructor"                   : 0,
+        "no-empty-function"                        : 0,
+        "@angular-eslint/no-empty-lifecycle-method": 0,
+        "@angular-eslint/directive-selector"       : [
           "error",
           {
-            "type": "attribute",
+            "type"  : "attribute",
             "prefix": "app",
-            "style": "camelCase"
+            "style" : "camelCase"
           }
         ],
-        "@angular-eslint/component-selector": [
+        "@angular-eslint/component-selector"       : [
           "error",
           {
-            "type": "element",
+            "type"  : "element",
             "prefix": "app",
-            "style": "kebab-case"
+            "style" : "kebab-case"
           }
         ]
       }
     },
     {
-      "files": [
+      "files"  : [
         "*.html"
       ],
       "extends": [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {}
+      "rules"  : {}
     }
   ]
 }
