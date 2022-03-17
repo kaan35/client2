@@ -1,9 +1,7 @@
 ### Server Side Prod ###
-### STAGE 1: Build ###
 FROM node:alpine AS build
-WORKDIR /usr/src/app/client
+WORKDIR /app/client
 COPY client/package*.json ./
-RUN npm install -g @angular/cli && npm install
-COPY client/ .
+RUN npm i -g @angular/cli && npm i
 RUN npm run build:ssr
 CMD ["node", "dist/app/server/main.js"]
